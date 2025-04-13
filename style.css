@@ -1,0 +1,51 @@
+#container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 3%;
+    justify-content: space-between;
+    grid-gap: 5px;
+}
+
+#container img{
+    width: 85%;
+}
+
+#navbar {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    
+    align-items: center;
+    
+}
+ #lhs{
+    height: 50px;
+    width: 30%;
+    border: 2px black;
+    display: flex;
+    margin-left: 20px;
+    
+} 
+
+#middle{
+    height: 50px;
+    width: 40%;
+     display: flex;
+     margin-left: 450px;
+     border-radius: 4px;
+   
+}
+
+#rhs{
+    height: 50px;
+    width: 30%;
+    border: 2px black;
+    display: flex;
+    margin-left: 600px;
+    
+}
+
+ #search_term{
+    width: 600px;
+    border: 1px solid black;
+} 
