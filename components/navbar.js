@@ -8,7 +8,7 @@ const navbar = () => {
 
     <button  id="search">Search</button>
 
-    <a href ="/YouTube/auth.html?">
+    <a href ="auth.html?">
     <div id="rhs">
     <img src = "https://icons.veryicon.com/png/o/miscellaneous/domain-icons/my-account-login.png">
     </div>

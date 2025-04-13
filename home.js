@@ -66,7 +66,7 @@ const searchVideos = async () =>{
 
                 data = JSON.stringify(data);
                 localStorage.setItem('clicked_video', data)
-                window.location.href ='/YouTube/video.html'
+                window.location.href ='video.html'
              }
 
              
