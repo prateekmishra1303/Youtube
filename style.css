@@ -1,51 +1,271 @@
+/* Video container layout */
 #container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin: 3%;
-    justify-content: space-between;
-    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 80px 24px 24px;
+    background-color: #fdfdfd;
 }
 
-#container img{
-    width: 85%;
-}
-
-#navbar {
-    height: 50px;
+#container img {
     width: 100%;
-    display: flex;
-    
-    align-items: center;
-    
-}
- #lhs{
-    height: 50px;
-    width: 30%;
-    border: 2px black;
-    display: flex;
-    margin-left: 20px;
-    
-} 
-
-#middle{
-    height: 50px;
-    width: 40%;
-     display: flex;
-     margin-left: 450px;
-     border-radius: 4px;
-   
+    border-radius: 8px;
 }
 
-#rhs{
-    height: 50px;
-    width: 30%;
-    border: 2px black;
-    display: flex;
-    margin-left: 600px;
-    
+/* === NAVBAR === */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  height: 60px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
- #search_term{
-    width: 600px;
-    border: 1px solid black;
-} 
+#lhs,
+#middle,
+#rhs {
+  display: flex;
+  align-items: center;
+}
+
+#lhs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  min-width: 100px; /* Adjust this as needed */
+}
+
+#icon1 {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+#icon1:hover {
+    background-color: #f0f0f0;
+}
+
+#icon2 {
+    height: 56px;
+    object-fit: contain;
+    max-width: 100%;
+    margin-left: 10px;
+}
+
+#middle {
+  flex: 1 1 auto;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+#rhs {
+  flex: 0 0 auto;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-right: 20px;
+}
+
+#search_term {
+  width: 100%;
+  max-width: 400px;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+#toggle-dark {
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+#login-icon {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+#login-icon:hover {
+    background-color: #f0f0f0;
+}
+
+/* Dark Mode Enhancements */
+body.dark-mode #login-icon:hover {
+    background-color: #2a2a2a;
+}
+
+#toggle-dark {
+    padding: 6px 12px;
+    font-size: 14px;
+    height: 36px;
+    white-space: nowrap;
+    max-width: 140px; /* increased from 120px */
+}
+
+
+#toggle-dark:hover {
+    background-color: #d5d5d5;
+}
+
+#login-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#login-icon:hover {
+    background-color: #f0f0f0;
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+    #navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+    }
+
+    #middle {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    #search_term {
+        max-width: 100%;
+    }
+}
+
+/* ========== DARK MODE ========== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+/* Ensure all text elements are white in dark mode */
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode span,
+body.dark-mode a {
+  color: #f1f1f1 !important;
+}
+
+/* === Navbar === */
+body.dark-mode #navbar {
+  background-color: #181818;
+  border-bottom: 1px solid #333;
+}
+
+/* Buttons inside navbar */
+body.dark-mode #toggle-dark,
+body.dark-mode #search {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+
+body.dark-mode #toggle-dark:hover,
+body.dark-mode #search:hover {
+  background-color: #3a3a3a;
+}
+
+/* Search input */
+body.dark-mode #search_term {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+
+/* === Video container === */
+body.dark-mode #container {
+  background-color: #121212;
+}
+
+body.dark-mode #container div {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode #container div:hover {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode #container img {
+  border: 1px solid #333;
+}
+
+/* Login/profile icon hover */
+body.dark-mode #login-icon:hover {
+  background-color: #2a2a2a;
+}
+
+/* Smooth transitions for theme */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode #search:hover,
+body.dark-mode #toggle-dark:hover {
+    background-color: #3a3a3a;
+}
+
+body.dark-mode #container {
+    background-color: #181818;
+}
+
+body.dark-mode #login-icon:hover {
+    background-color: #2a2a2a;
+}
+
+#toggle-dark.dark-active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Ensure navbar icons don't overflow or get hidden */
+#navbar {
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+/* Fix excessive input width to make room for rhs content */
+#search_term {
+    max-width: 100%;
+    width: 500px; /* Reduced from 600px */
+}
+
+/* Match toggle-dark button size with search button */
+#toggle-dark {
+    font-size: 14px;
+    height: 34px;
+}
+
+/* Optional: match search button height too (for visual balance) */
+#search {
+    height: 34px;
+}
+
+/* Dark mode icon adjustments */
+body.dark-mode #icon1,
+body.dark-mode #login-icon {
+    filter: brightness(0) invert(1);
+}
+

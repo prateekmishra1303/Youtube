@@ -17,4 +17,4 @@ let video_div = document.getElementById('video_details');
 video_div.append(iframe);
 };
 
-window.onload = showClickedVideo;
+export { showClickedVideo };

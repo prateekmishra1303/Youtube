@@ -1,17 +1,119 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+/* Navbar styles */
+#navbar {
+  height: 64px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Navbar inner layout */
+#video-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Hamburger icon */
+#hamburger {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+
+/* YouTube logo */
+#youtube-logo {
+  height: 64px; /* Increase from 24px */
+  object-fit: contain;
+  max-width: 100%;
+}
+
+/* Main layout */
 #container {
-    display: flex;
-    height: 700px;
+  display: flex;
+  gap: 24px;
+  padding: 24px;
 }
+
+/* Video section */
 #video_details {
-    flex: 7;
-    display: flex;
-    object-fit: contain;
+  flex: 2;
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
 }
 
+/* Recommendations section */
 #recommendations {
-    flex: 3;
+  flex: 1;
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
 }
 
-div{
-    border: solid 1px black;
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  #container {
+    flex-direction: column;
+    padding: 16px;
+  }
 }
+
+/* Base light mode (default) styles if needed */
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #181818;
+  color: #fff;
+}
+
+body.dark-mode #navbar {
+  background-color: #202020;
+}
+
+body.dark-mode #container {
+  background-color: #181818;
+}
+
+body.dark-mode #video_details,
+body.dark-mode #recommendations {
+  background-color: #181818;
+  color: #fff;
+}
+
+/* Optional: darken images or icons if needed */
+/* body.dark-mode img {
+  filter: brightness(0.9);
+} */
+
+/* Invert hamburger icon color in dark mode */
+body.dark-mode #hamburger {
+    filter: brightness(0) invert(1);
+}
+
