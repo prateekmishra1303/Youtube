@@ -3,18 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href = "auth.css">
     <title>Document</title>
 </head>
 <style>
-    #container {
+    /* #container {
         display: flex;
     }
 
     form{
         width: 10%;
-    }
+    } */
 </style>
 <body>
+
+
+    <div id="navbar">
+    <div id="video-nav-left">
+      <img id="hamburger" src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" alt="menu" />
+      <a href="index.html"><img id="youtube-logo" src="https://www.logo.wine/a/logo/YouTube/YouTube-White-Full-Color-Logo.wine.svg" alt="YouTube" /></a>
+    </div>
+  </div>
+
+  
     <div id = "container">
         <div id="register-form">
             <h1>Register</h1>
@@ -30,6 +41,8 @@
             </form>
         </div>
 
+        <div class="divider"></div>
+
         <div id="login-form">
             <h1>Login</h1>
             <form>
@@ -40,7 +53,14 @@
             </form>
         </div>
     </div>
+
+<script>
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+</script>
+
+<script type="module" src="auth.js"></script>
 </body>
 </html>
 
-<script src="auth.js"></script>
